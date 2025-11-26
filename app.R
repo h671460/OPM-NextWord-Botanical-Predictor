@@ -177,7 +177,7 @@ load_and_train_all <- function() {
     freq4 <- make_freq_table(df4)
     agent <- build_opm_agent(df4)
     
-    # attach YOUR botanical list for this group
+    # attaches  botanical list 
     botanical_tbl <- BOTANICAL_TABLES[[grp]]
     
     models[[grp]] <- list(
@@ -266,7 +266,7 @@ server <- function(input, output, session) {
     top3 <- sort(probs_vec, decreasing = TRUE)[1:3]
     rv$last_top3 <- top3
     
-    # botanical stats using YOUR fixed table
+    # botanical stats using  fixed table
     bt <- botanical_probability(probs_vec, model$botanical_tbl)
     rv$last_botanical <- bt
   })
